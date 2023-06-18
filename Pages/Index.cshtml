@@ -1,0 +1,43 @@
+@page
+@{
+    ViewData["Title"] = "Landing Page";
+    Layout = "_Layout";
+}
+    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Index.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <h1 id="h1">Welcome to the Memory Card Game!</h1>
+    </div>
+        <div id="Msg"></div>
+        <div id="fail"></div>
+
+<div class="container">
+
+    <form method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="Username" />
+        </div>
+        <br>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="Password" />
+        </div>
+        <br>
+            <input type="submit" id="Login" name="Login" value="Login">
+    </form>
+
+    <p style="color: white;">Not registered? <a href="/Signup" style="color: rgb(112, 173, 243);">Click here</a> to sign up.</p>
+
+    <script src="/js/Login.js"></script>
+
+</div>
+</body>
+</html>

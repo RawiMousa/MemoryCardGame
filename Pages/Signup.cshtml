@@ -1,0 +1,51 @@
+@page
+@{
+    ViewData["Title"] = "Signup";
+    Layout = "_Layout";
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Signup.css" />
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="Signup">Signup</h1>
+    <div id="successMsg"></div>
+    <br>
+    <div class="container">
+        <form method="post" id="signup-form">
+
+            <div>
+                <label>Username:</label>
+                <input type="text" id="username" name="Username">
+                <div id="error" class="username-error"></div>
+            </div>
+            <br>
+            <div>
+                <label>Email:</label>
+                <input type="text" id="email" name="Email">
+                <div id="error" class="email-error"></div>
+
+            </div>
+            <br>
+            <div>
+                <label>Password:</label>
+                <input type="password" id="password" name="Password">
+                <div id="error" class="password-error"></div>
+            </div>
+            <br>
+            <div>
+                <label>Confirm password</label>
+                <input type="password" id="confirm" name="ConfirmPassword">
+            </div>
+            <br>
+            <input type="submit" id="signup-button" name="signup" value="Signup">
+        </form>
+    </div>
+
+    <script src="/js/Signup.js"></script>
+</body>
+</html>

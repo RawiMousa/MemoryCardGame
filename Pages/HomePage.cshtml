@@ -1,0 +1,30 @@
+@page
+@{
+    ViewData["Title"] = "HomePage";
+    Layout = "_Layout";
+}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/HomePage.css" />
+    <title>Document</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#">Images</a>
+            <ul>
+                <li><a href="#">Upload Images</a></li>
+                <li><a href="#">Remove Images</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Play</a></li>
+        <li><a href="/users/logout" id="logoutButton">Logout</a></li>
+    </ul>
+</nav>
+<script src="/js/Logout.js"></script>
+</body>
+</html>
