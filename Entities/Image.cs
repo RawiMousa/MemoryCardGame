@@ -7,5 +7,4 @@ namespace MemoryCardGame.Entities
         public int UserId { get; set; } // Foreign key property
 
     }
-
 }

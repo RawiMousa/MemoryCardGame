@@ -31,7 +31,7 @@ form.addEventListener('submit', (event) => {
                 window.location.href = '/Index';
               }, 2000); 
             }        } else if (response.status === 400) {
-                // Error updating the book
+                // Error signing up
                 response.json().then(data => {
                   console.log(data);
                   // Displaying error messages for each field

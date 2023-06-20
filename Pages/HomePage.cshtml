@@ -10,21 +10,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/HomePage.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <title>Document</title>
 </head>
 <body>
+
 <nav>
     <ul>
-        <li><a href="#">Images</a>
-            <ul>
-                <li><a href="#">Upload Images</a></li>
-                <li><a href="#">Remove Images</a></li>
-            </ul>
-        </li>
+        <li><a href="#" onclick="toggleImagesTab()">Images</a></li>
         <li><a href="#">Play</a></li>
         <li><a href="/users/logout" id="logoutButton">Logout</a></li>
     </ul>
 </nav>
+
+<div id="UploadImageSuccess" style="display: none;"></div>
+<div id="UploadImageFail" style="display: none;"></div>
+<div id="myImages" style="display: none;"></div>
+<div id="galleryContainer" style="display: none;"></div>
+<div id="ImagesTab" style="display: none;"></div>
+<div id="questionIconContainer"></div>
+
 <script src="/js/Logout.js"></script>
+<script src="/js/PopUpIcon.js"></script>
+<script src="/js/Images.js"></script>
+
 </body>
 </html>

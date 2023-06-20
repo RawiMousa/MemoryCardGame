@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eA00TjeEjBPIB4JYthQIsObqKZgYIef2xvmJH37DTzo=",
+  "Hash": "ZTmIlN8JOiS59rEvfaMV45QQIVGQfztnAxxnHcP6KjQ=",
   "Source": "MemoryCardGame",
   "BasePath": "_content/MemoryCardGame",
   "Mode": "Default",
@@ -85,6 +85,23 @@
       "OriginalItemSpec": "wwwroot/images/game.png"
     },
     {
+      "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/js/Images.js",
+      "SourceId": "MemoryCardGame",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/",
+      "BasePath": "_content/MemoryCardGame",
+      "RelativePath": "js/Images.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/Images.js"
+    },
+    {
       "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/js/Login.js",
       "SourceId": "MemoryCardGame",
       "SourceType": "Discovered",
@@ -117,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/Logout.js"
+    },
+    {
+      "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/js/PopUpIcon.js",
+      "SourceId": "MemoryCardGame",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/",
+      "BasePath": "_content/MemoryCardGame",
+      "RelativePath": "js/PopUpIcon.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/PopUpIcon.js"
     },
     {
       "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/js/Signup.js",

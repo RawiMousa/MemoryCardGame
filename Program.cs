@@ -35,6 +35,7 @@ builder.Services.AddScoped<SignupService>();
 builder.Services.AddScoped<SecretKeyGenerator>();
 builder.Services.AddScoped<SecretKeyInitializer>();
 builder.Services.AddScoped<GenerateTokenService>();
+builder.Services.AddScoped<ImageService>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
