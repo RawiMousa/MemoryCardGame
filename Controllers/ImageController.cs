@@ -106,10 +106,10 @@ namespace MemoryCardGame.Controllers
         
 
         // DELETE: /images/{id}
-        [HttpDelete("{userId}")]
-        public IActionResult DeleteImage(int userId)
+        [HttpDelete("{id}")]
+        public IActionResult DeleteImage(int id)
         {
-            var existingImage = _imageRepository.GetImageByUserId(userId);
+            var existingImage = _imageRepository.GetImageById(id);
             if (existingImage == null)
             {
                 return NotFound();

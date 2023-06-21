@@ -50,7 +50,17 @@ namespace MemoryCardGame.Services
                 errors.Add("Image file name exceeds the limit (200 characters).");
             }
 
+            // Check maximum number of uploaded photos (25 maximum)
+            var totalImageCount = _imageRepository.GetTotalImageCount();
+            const int maxImageCount = 25;
+            if (totalImageCount >= maxImageCount)
+            {
+                errors.Add("You have reached the maximum limit of uploaded photos.");
+            }
+
             return errors;
+
+
         }
 
 

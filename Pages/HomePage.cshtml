@@ -18,7 +18,13 @@
 
 <nav>
     <ul>
-        <li><a href="#" onclick="toggleImagesTab()">Images</a></li>
+        @* <li><a href="#" onclick="toggleImagesTab()">Images</a></li> *@
+        <li><a href="#">Images</a>
+      <ul class="sub-tabs">
+        <li><a href="#" onclick="handleMyImagesClick()">My Images</a></li>
+        <li><a href="#" onclick="createUploadForm()">Upload Images</a></li>
+      </ul>
+        </li>
         <li><a href="#">Play</a></li>
         <li><a href="/users/logout" id="logoutButton">Logout</a></li>
     </ul>
@@ -29,7 +35,7 @@
 <div id="myImages" style="display: none;"></div>
 <div id="galleryContainer" style="display: none;"></div>
 <div id="ImagesTab" style="display: none;"></div>
-<div id="questionIconContainer"></div>
+<div id="questionIconContainer" style="display: none;"></div>
 
 <script src="/js/Logout.js"></script>
 <script src="/js/PopUpIcon.js"></script>

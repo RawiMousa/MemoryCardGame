@@ -44,6 +44,11 @@ namespace MemoryCardGame.Repositories
             return _dbContext.Images.Any(image => image.FileName == imageName);
         }
 
+        public int GetTotalImageCount()
+        {
+            return _dbContext.Images.Count();
+        }
+
         public void DeleteImage(Image image)
         {
             _dbContext.Images.Remove(image);

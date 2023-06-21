@@ -5,6 +5,7 @@ using MemoryCardGame.Controllers;
 using MemoryCardGame.Entities;
 using MemoryCardGame.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.FileProviders;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -56,11 +57,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseStaticFiles(); // Serve files from the wwwroot directory
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Uploads")),
+    RequestPath = "/Uploads"
+});
+
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
-app.UseStaticFiles();
 
 app.UseRouting();
 
