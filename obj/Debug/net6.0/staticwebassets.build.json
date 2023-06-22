@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZTmIlN8JOiS59rEvfaMV45QQIVGQfztnAxxnHcP6KjQ=",
+  "Hash": "WgyRZZxlxqEKRxzSXgpQ4qOEf2sE5eWSE47ZtPDah2s=",
   "Source": "MemoryCardGame",
   "BasePath": "_content/MemoryCardGame",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "wwwroot/css/Index.css"
     },
     {
+      "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/css/Play.css",
+      "SourceId": "MemoryCardGame",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/",
+      "BasePath": "_content/MemoryCardGame",
+      "RelativePath": "css/Play.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/Play.css"
+    },
+    {
       "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/css/Signup.css",
       "SourceId": "MemoryCardGame",
       "SourceType": "Discovered",
@@ -68,6 +85,23 @@
       "OriginalItemSpec": "wwwroot/css/Signup.css"
     },
     {
+      "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/images/card2.jpg",
+      "SourceId": "MemoryCardGame",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/",
+      "BasePath": "_content/MemoryCardGame",
+      "RelativePath": "images/card2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/card2.jpg"
+    },
+    {
       "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/images/game.png",
       "SourceId": "MemoryCardGame",
       "SourceType": "Discovered",
@@ -83,6 +117,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/game.png"
+    },
+    {
+      "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/images/grey.png",
+      "SourceId": "MemoryCardGame",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/",
+      "BasePath": "_content/MemoryCardGame",
+      "RelativePath": "images/grey.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/grey.png"
+    },
+    {
+      "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/images/light-grey-06.jpg",
+      "SourceId": "MemoryCardGame",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/",
+      "BasePath": "_content/MemoryCardGame",
+      "RelativePath": "images/light-grey-06.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/light-grey-06.jpg"
     },
     {
       "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/js/Images.js",
@@ -134,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/Logout.js"
+    },
+    {
+      "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/js/Play.js",
+      "SourceId": "MemoryCardGame",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/",
+      "BasePath": "_content/MemoryCardGame",
+      "RelativePath": "js/Play.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/Play.js"
     },
     {
       "Identity": "/home/rawimousa/Code/CS/MemoryCardGame/wwwroot/js/PopUpIcon.js",

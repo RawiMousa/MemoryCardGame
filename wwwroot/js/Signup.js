@@ -71,3 +71,10 @@ form.addEventListener('submit', (event) => {
     // Handle the error
   });
 });
+
+  
+
+
+createQuestionIcon('usernamePopUp','Username should contain only English letters and Numbers, and be 6-12 characters in total.');
+createQuestionIcon('emailPopUp', 'Enter a valid email');
+createQuestionIcon('passwordPopUp', 'Password should contain 8-20 characters, English letters and numbers only');

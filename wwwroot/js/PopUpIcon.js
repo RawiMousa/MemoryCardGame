@@ -1,6 +1,5 @@
 function createQuestionIcon(containerId, description) {
     const container = document.getElementById(containerId);
-    console.log(containerId);
   
     // Create the question mark icon element
     const questionIcon = document.createElement('i');

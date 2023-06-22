@@ -59,3 +59,33 @@ input {
     width: 200px;
     font-weight: bold;
 }
+
+
+
+
+.question-icon {
+    position: absolute;
+    display: inline-block;
+    margin-left: 180px;
+    margin-top: -45px;
+  }
+  
+  .popup-window {
+    position: absolute;
+    top: 10%;
+    left: 62%;
+    display: none;
+    background-color: #000000;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    z-index: 1;
+  }
+  
+  .popup-window.show {
+    display: block;
+  }
+  
+
+
+

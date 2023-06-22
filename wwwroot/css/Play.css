@@ -1,0 +1,149 @@
+body {
+    background-image: url('/images/grey.png');
+    background-position:right;
+}
+
+
+nav {
+    background-color: #da5f27;
+    border-radius: 3px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    position: absolute;
+    left: 0px; 
+    right: 1px;
+    top: 0px;
+}
+
+ul {
+    list-style-type: none;
+    align-items: center;
+    display: flex; 
+    font-size: large;
+    font-weight: bolder;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    /* padding: 5px 10px; */
+}
+
+ul ul {
+    display: none;
+    position: absolute;
+    background-color: #0f0b0b;
+    padding: 0;
+}
+
+ul li:hover > ul {
+    display: inherit;
+}
+
+ul ul li {
+    width: 100%;
+    float: none;
+    display: list-item;
+    position: relative;
+}
+
+ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 170px;
+}
+
+
+
+#gameBoard {
+    width: 80%;
+    left: 225px;
+    top: 100px;
+    position: relative;
+}
+
+  
+
+    /* background-image: url('/images/card2.jpg'); Replace with the path to your image */
+
+
+
+
+
+/* .card {
+    display: inline-flex;
+    width: 120px;
+    height: 120px;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  } */
+  
+/* .card:hover {
+    background-color: #ddd;
+  } */
+
+/* .card-image {
+    display: inline-flex;
+    border-radius: 5px;
+    width: 120px;
+    height: 120px; 
+    border: none;
+    border: 1px solid rgb(238, 113, 41); 
+} */
+  
+
+
+
+
+
+.card {
+    display: inline-flex;
+    width: 120px;
+    height: 120px;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    perspective: 1000px; /* Add this line for 3D effect */
+  }
+  
+  .card:hover {
+    background-color: #ddd;
+  }
+  
+  .card-image {
+    display: inline-flex;
+    border-radius: 5px;
+    width: 120px;
+    height: 120px; 
+    border: none;
+    border: 1px solid rgb(238, 113, 41); /* Add this line for white border */
+    cursor: pointer;
+    /* backface-visibility: hidden; Add this line for 3D effect */
+    transition: transform 0.3s; /* Add this line for 3D effect */
+  }
+  
+  .card.flipped .card-image {
+    transform: rotateY(180deg); /* Add this line for flipping effect */
+  }
+  

@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/Signup.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,12 +23,14 @@
                 <label>Username:</label>
                 <input type="text" id="username" name="Username">
                 <div id="error" class="username-error"></div>
+                <div id="usernamePopUp" class="container"></div>
             </div>
             <br>
             <div>
                 <label>Email:</label>
                 <input type="text" id="email" name="Email">
                 <div id="error" class="email-error"></div>
+                <div id="emailPopUp" class="container"></div>
 
             </div>
             <br>
@@ -35,6 +38,8 @@
                 <label>Password:</label>
                 <input type="password" id="password" name="Password">
                 <div id="error" class="password-error"></div>
+                <div id="passwordPopUp" class="container"></div>
+
             </div>
             <br>
             <div>
@@ -45,7 +50,7 @@
             <input type="submit" id="signup-button" name="signup" value="Signup">
         </form>
     </div>
-
+    <script src="/js/PopUpIcon.js"></script>
     <script src="/js/Signup.js"></script>
 </body>
 </html>

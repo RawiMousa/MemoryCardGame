@@ -412,7 +412,6 @@ if (!questionIconContainer) {
 function createUploadForm() {
     const imagesTab = document.getElementById('ImagesTab');
     const galleryContainer = document.getElementById('galleryContainer');
-    const uploadForm = document.getElementById('UploadForm');
 
     // Hide the gallery container if it was previously displayed
     galleryContainer.style.display = 'none';
