@@ -146,4 +146,24 @@ ul ul ul li {
   .card.flipped .card-image {
     transform: rotateY(180deg); /* Add this line for flipping effect */
   }
-  
+
+
+
+  #pointCounter {
+    position: relative;
+    margin-top: 100px;
+    color: #fff;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: left;
+  }
+
+
+  #Points {
+    position: relative;
+    margin-top: -36px;
+    margin-left: 120px;
+    color: #fff;
+    font-size: xx-large;
+    font-weight: bold;
+  }
