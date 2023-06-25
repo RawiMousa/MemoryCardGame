@@ -28,6 +28,7 @@ ul {
 a {
     color: #fff;
     text-decoration: none;
+    margin-left: -50px;
     /* padding: 5px 10px; */
 }
 
@@ -60,54 +61,12 @@ ul ul ul li {
 #gameBoard {
     width: 80%;
     left: 225px;
-    top: 100px;
+    top: 20px;
     position: relative;
 }
 
   
-
-    /* background-image: url('/images/card2.jpg'); Replace with the path to your image */
-
-
-
-
-
-/* .card {
-    display: inline-flex;
-    width: 120px;
-    height: 120px;
-    border: none;
-    background-size: cover;
-    background-position: center;
-    margin: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-    line-height: 100px;
-    cursor: pointer;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-  } */
   
-/* .card:hover {
-    background-color: #ddd;
-  } */
-
-/* .card-image {
-    display: inline-flex;
-    border-radius: 5px;
-    width: 120px;
-    height: 120px; 
-    border: none;
-    border: 1px solid rgb(238, 113, 41); 
-} */
-  
-
-
-
-
-
 .card {
     display: inline-flex;
     width: 120px;
@@ -127,9 +86,7 @@ ul ul ul li {
     perspective: 1000px; /* Add this line for 3D effect */
   }
   
-  .card:hover {
-    background-color: #ddd;
-  }
+
   
   .card-image {
     display: inline-flex;
@@ -137,7 +94,7 @@ ul ul ul li {
     width: 120px;
     height: 120px; 
     border: none;
-    border: 1px solid rgb(238, 113, 41); /* Add this line for white border */
+    /* border: 1px solid rgb(238, 113, 41); Add this line for white border */
     cursor: pointer;
     /* backface-visibility: hidden; Add this line for 3D effect */
     transition: transform 0.3s; /* Add this line for 3D effect */
@@ -149,21 +106,137 @@ ul ul ul li {
 
 
 
+
+
+
   #pointCounter {
     position: relative;
-    margin-top: 100px;
-    color: #fff;
+    margin-top: 50px;
     font-size: xx-large;
     font-weight: bold;
     text-align: left;
+    animation: colorChange 30s infinite;
   }
-
-
+  
+  @keyframes colorChange {
+    0% { color: rgb(255, 253, 253); }
+    25% { color: #da5f27; }
+    50% { color: rgb(255, 255, 255); }
+    75% { color: #da5f27; }
+    100% { color: rgb(255, 244, 255); }
+  }
+  
   #Points {
     position: relative;
     margin-top: -36px;
     margin-left: 120px;
-    color: #fff;
     font-size: xx-large;
     font-weight: bold;
+    animation: colorChange 30s infinite;
+  }
+  
+
+
+
+
+
+  #Timer {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+
+
+
+  .message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F8F8FF;
+    color: #da5f27;
+    font-size: 3rem;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+
+
+
+
+
+
+  .message-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .question {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .play-again button {
+    font-size: 16px;
+    padding: 8px 16px;
+    margin-right: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .play-again button:hover {
+    background-color: #2980b9;
+  }
+
+
+.averageTimeDisplay {
+    font-size: large;
+}
+
+.averageMovesDisplay {
+    font-size: large;
+}
+  
+
+
+
+
+#Moves {
+    position: relative;
+    margin-top: 1px;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: left;
+    animation: colorChange 30s infinite;
+  }
+  
+  @keyframes colorChange {
+    0% { color: rgb(255, 253, 253); }
+    25% { color: #da5f27; }
+    50% { color: rgb(255, 255, 255); }
+    75% { color: #da5f27; }
+    100% { color: rgb(255, 244, 255); }
+  }
+  
+  #MovesNumber {
+    position: relative;
+    margin-top: -36px;
+    margin-left: 120px;
+    font-size: xx-large;
+    font-weight: bold;
+    animation: colorChange 30s infinite;
   }
