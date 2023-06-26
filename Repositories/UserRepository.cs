@@ -1,3 +1,5 @@
+// This module interacts directly with the database , performing MOSTLY CRUD actions with the User table in the Database.
+
 using Microsoft.EntityFrameworkCore;
 using MemoryCardGame.Data;
 using MemoryCardGame.Entities;
@@ -56,10 +58,9 @@ namespace MemoryCardGame.Repositories
         
         public User Login(string username, string password)
         {
-            // Retrieve the user based on the provided username or email
+            // Retrieving the user based on the provided username or email
             var user = GetUserByUsername(username);
-
-            // Check if the user exists and the password matches
+            // Checking if the user exists and the password matches
             if (user != null && VerifyPassword(user.Password, password))
             {
                 return user;
@@ -75,7 +76,6 @@ namespace MemoryCardGame.Repositories
             var passwordVerificationResult = passwordHasher.VerifyHashedPassword(null, hashedPassword, password);
 
             return passwordVerificationResult == PasswordVerificationResult.Success;
-
         }
 
         public User Logout(int userId)

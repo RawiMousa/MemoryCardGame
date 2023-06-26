@@ -44,7 +44,6 @@ input {
     justify-content: center;
     margin-left: 204px;
     width: 200px;
-
 }
 
 #successMsg{
@@ -68,9 +67,9 @@ input {
     display: inline-block;
     margin-left: 180px;
     margin-top: -45px;
-  }
+}
   
-  .popup-window {
+.popup-window {
     position: absolute;
     top: 10%;
     left: 62%;
@@ -80,11 +79,28 @@ input {
     padding: 10px;
     width: 300px;
     z-index: 1;
-  }
+}
   
-  .popup-window.show {
+.popup-window.show {
     display: block;
-  }
+}
+
+
+
+
+
+#backToLogin{
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 500px;
+    width: 200px;
+    font-weight: bold;
+}
   
 
 

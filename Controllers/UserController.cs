@@ -52,21 +52,6 @@ namespace MemoryCardGame.Controllers
         }
 
 
-        // // POST: /users
-        // [HttpPost]
-        // public IActionResult CreateUser([FromBody] User user)
-        // {
-        //     if (!ModelState.IsValid)
-        //     {
-        //         return BadRequest(ModelState);
-        //     }
-            
-        //     _userRepository.CreateUser(user);
-            
-        //     return CreatedAtAction(nameof(GetUserById), new { userId = user.Id }, user);
-
-        // }
-
         // POST: /users/signup
         [HttpPost("signup")]
         public IActionResult Signup([FromBody] User user)
@@ -97,7 +82,6 @@ namespace MemoryCardGame.Controllers
                 // Return a success response
                 return Ok("Signup successful");
                 // return RedirectToPage("/Index");
-
             }
             catch (Exception ex)
             {
@@ -106,10 +90,7 @@ namespace MemoryCardGame.Controllers
             }
         }
 
-
-
-
-
+        // Declaring this class and using it in the Login API Post request.
         public class LoginRequest
         {
             public string Username { get; set; }
@@ -117,30 +98,27 @@ namespace MemoryCardGame.Controllers
         }
 
 
-
-
+        // POST : /users/login
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest loginRequest)
         {
             try
             {
-                // Perform any necessary validation on the login request
+                // Performing any necessary validation on the login request
                 if (string.IsNullOrEmpty(loginRequest.Username) || string.IsNullOrEmpty(loginRequest.Password))
                 {
                     return BadRequest("Username and password are required.");
                 }
-
                 // Retrieve the user from the database based on the provided username or email
                 var user = _userRepository.Login(loginRequest.Username, loginRequest.Password);
 
                 if (user != null)
                 {
-                    // Authentication successful
+                // Authentication successful - generating a token for the logged in user.
                 var token = _generateTokenService.GenerateToken(user.Id.ToString());
 
                 // Return the token as a response
                 return Ok(new { Token = token, UserId = user.Id });
-
                 }
                 else
                 {
@@ -156,13 +134,14 @@ namespace MemoryCardGame.Controllers
         }
 
 
-
-
+        // Declaring this class and using it in the Logout API Post request.
         public class LogoutRequest
         {
             public int UserId { get; set; }
         }
 
+
+        // POST: /users/logout
         [HttpPost("logout")]
         public IActionResult Logout([FromBody] LogoutRequest request)
         {
@@ -176,12 +155,6 @@ namespace MemoryCardGame.Controllers
                 return NotFound("User not found");
             }
         }
-
-
-
-
-
-
 
         // PUT: /users/{id}
         [HttpPut("{id}")]

@@ -1,3 +1,4 @@
+// User model/entity.
 namespace MemoryCardGame.Entities
 {
     public class User

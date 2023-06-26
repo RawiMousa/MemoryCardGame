@@ -1,5 +1,4 @@
-using System;
-using System.IO;
+// Generating the token for the logged in user.
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

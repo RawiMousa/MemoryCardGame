@@ -1,3 +1,4 @@
+// This module is used in the UserController in the Signup API endpoint, to validate the fields.
 using MemoryCardGame.Entities;
 using MemoryCardGame.Repositories;
 using System.Text.RegularExpressions;

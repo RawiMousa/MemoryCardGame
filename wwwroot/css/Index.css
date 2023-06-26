@@ -1,9 +1,7 @@
-
 #h1 {
     color: aliceblue;
     text-align: center;
     padding: 15px;
-    /* margin-left: 400px; */
 }
 
 
@@ -13,8 +11,8 @@
     align-items: center;
     justify-content: center;
     color: white;
-    /* margin-left: 200px; */
 }
+
 
 form {
     margin-bottom: 20px;
@@ -23,9 +21,11 @@ form {
     align-items: center;
 }
 
+
 .form-group {
     margin-bottom: 10px;
 }
+
 
 label {
     display: inline-block;
@@ -34,9 +34,11 @@ label {
     font-weight: bolder;
 }
 
+
 input {
     width: 200px;
 }
+
 
 #Login{
     width: 200px;
@@ -45,7 +47,6 @@ input {
     border: none;
     border-radius: 3px;
 }
-
 
 
 

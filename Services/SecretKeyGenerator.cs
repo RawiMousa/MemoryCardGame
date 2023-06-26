@@ -1,6 +1,6 @@
+// This module is responsible for generating a secret key. This is usually done once , and the key is saved safely.
+// The key is used to generate token for the logged in user.
 using System.Security.Cryptography;
-
-
 namespace MemoryCardGame.Services
 {
     public class SecretKeyGenerator

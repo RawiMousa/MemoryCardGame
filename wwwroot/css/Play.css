@@ -83,7 +83,7 @@ ul ul ul li {
     cursor: pointer;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
-    perspective: 1000px; /* Add this line for 3D effect */
+    perspective: 1000px; 
   }
   
 
@@ -94,14 +94,12 @@ ul ul ul li {
     width: 120px;
     height: 120px; 
     border: none;
-    /* border: 1px solid rgb(238, 113, 41); Add this line for white border */
     cursor: pointer;
-    /* backface-visibility: hidden; Add this line for 3D effect */
-    transition: transform 0.3s; /* Add this line for 3D effect */
+    transition: transform 0.3s; 
   }
   
   .card.flipped .card-image {
-    transform: rotateY(180deg); /* Add this line for flipping effect */
+    transform: rotateY(180deg); 
   }
 
 
@@ -140,7 +138,7 @@ ul ul ul li {
 
 
 
-  #Timer {
+#Timer {
     position: absolute;
     top: 100px;
     left: 50%;
@@ -150,12 +148,12 @@ ul ul ul li {
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 5px;
-  }
+}
   
 
 
 
-  .message {
+.message {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -166,7 +164,7 @@ ul ul ul li {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
+}
   
 
 
@@ -174,21 +172,23 @@ ul ul ul li {
 
 
 
-  .message-container {
+.message-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-  }
+}
   
-  .question {
+
+.question {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-  }
+}
   
-  .play-again button {
+
+.play-again button {
     font-size: 16px;
     padding: 8px 16px;
     margin-right: 10px;
@@ -196,11 +196,12 @@ ul ul ul li {
     color: #fff;
     border: none;
     cursor: pointer;
-  }
+}
   
-  .play-again button:hover {
+  
+.play-again button:hover {
     background-color: #2980b9;
-  }
+}
 
 
 .averageTimeDisplay {
@@ -222,21 +223,21 @@ ul ul ul li {
     font-weight: bold;
     text-align: left;
     animation: colorChange 30s infinite;
-  }
+}
   
-  @keyframes colorChange {
+@keyframes colorChange {
     0% { color: rgb(255, 253, 253); }
     25% { color: #da5f27; }
     50% { color: rgb(255, 255, 255); }
     75% { color: #da5f27; }
     100% { color: rgb(255, 244, 255); }
-  }
+}
   
-  #MovesNumber {
+#MovesNumber {
     position: relative;
     margin-top: -36px;
     margin-left: 120px;
     font-size: xx-large;
     font-weight: bold;
     animation: colorChange 30s infinite;
-  }
+}

@@ -1,5 +1,5 @@
-using System.IO;
-
+// The purpose of this module is to provide an alternative way of generating and initializing the secret key. Instead of directly using the SecretKeyGenerator module,
+// the SecretKeyInitializer module handles the generation and initialization process.
 namespace MemoryCardGame.Services
 {
     public class SecretKeyInitializer

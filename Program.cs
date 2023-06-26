@@ -22,13 +22,9 @@ builder.Services.AddDbContext<GameDbContext>(options =>
 builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<AverageMovesRepository>();
-builder.Services.AddScoped<AverageTimeRepository>();
 builder.Services.AddScoped<ImageRepository>();
 builder.Services.AddScoped<UserRepository>();
 
-builder.Services.AddScoped<AverageMovesController>();
-builder.Services.AddScoped<AverageTimeController>();
 builder.Services.AddScoped<ImageController>();
 builder.Services.AddScoped<UserController>();
 
