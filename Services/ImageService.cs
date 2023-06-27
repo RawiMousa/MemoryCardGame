@@ -8,11 +8,13 @@ namespace MemoryCardGame.Services
     {
         private readonly ImageRepository _imageRepository;
 
+
         public ImageService(ImageRepository imageRepository)
         {
             _imageRepository = imageRepository;
+
         }
-        public List<string> ValidateImage(IFormFile imageFile)
+        public List<string> ValidateImage(IFormFile imageFile, int userId)
         {   
             var errors = new List<string>();
 
@@ -51,7 +53,18 @@ namespace MemoryCardGame.Services
             }
 
             // Checking maximum number of uploaded photos (25 maximum)
-            var totalImageCount = _imageRepository.GetTotalImageCount();
+            // var totalImageCount = _imageRepository.GetTotalImageCount();
+            // const int maxImageCount = 25;
+            // if (totalImageCount >= maxImageCount)
+            // {
+            //     errors.Add("You have reached the maximum limit of uploaded photos.");
+            // }
+
+            // return errors;
+            // var userIdClaim = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
+            // var userId = userIdClaim?.Value;
+
+            var totalImageCount = _imageRepository.GetTotalImageCount(userId); // Pass the userId
             const int maxImageCount = 25;
             if (totalImageCount >= maxImageCount)
             {
@@ -59,6 +72,7 @@ namespace MemoryCardGame.Services
             }
 
             return errors;
+
         }
 
         // A helper bool that checks the type of file, attepmting to upload.

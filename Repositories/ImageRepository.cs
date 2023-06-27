@@ -1,3 +1,4 @@
+// This module interacts directly with the database , performing MOSTLY CRUD actions with the Image table in the Database.
 using MemoryCardGame.Data;
 using MemoryCardGame.Entities;
 
@@ -44,10 +45,12 @@ namespace MemoryCardGame.Repositories
             return _dbContext.Images.Any(image => image.FileName == imageName);
         }
 
-        public int GetTotalImageCount()
+        public int GetTotalImageCount(int userId)
         {
-            return _dbContext.Images.Count();
+            return _dbContext.Images.Count(i => i.UserId == userId);
         }
+
+
 
         public void DeleteImage(Image image)
         {
