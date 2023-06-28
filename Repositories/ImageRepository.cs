@@ -40,10 +40,12 @@ namespace MemoryCardGame.Repositories
             _dbContext.SaveChanges();
         }
 
-        public bool ImageExists(string imageName)
+
+        public bool ImageExists(string imageName, int userId)
         {
-            return _dbContext.Images.Any(image => image.FileName == imageName);
+            return _dbContext.Images.Any(image => image.FileName == imageName && image.UserId == userId);
         }
+
 
         public int GetTotalImageCount(int userId)
         {

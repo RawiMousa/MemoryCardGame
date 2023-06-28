@@ -12,6 +12,7 @@ function QuitGame() {
 
 // The function generateCards , generates the 50 cell matrix , and fetches the images of the logged in user,
 // And distributes the images to the cells randomly . 
+let cardsData = [];
 const rows = 5;
 const columns = 10;
 function generateCards() {
@@ -51,13 +52,14 @@ function generateCards() {
         // Generating colors for the remaining cards
         const colors = getRandomColors(remainingCards);
 
-        let cardsData = [];
+        // let cardsData = [];
 
         // Creating an array with combined image and color data
         for (let i = 0; i < duplicatedImages.length; i++) {
             cardsData.push({
             type: 'image',
-            data: duplicatedImages[i].fileName
+            data: duplicatedImages[i].fileName,
+            altData: ''
             });
         }
 
@@ -84,33 +86,42 @@ function generateCards() {
             const card = document.createElement('div');
             card.classList.add('card');
 
+            const image = document.createElement('img');
+            image.classList.add('card-image');
+            image.src = '/images/card2.jpg'; 
+            image.alt = ''; 
+
+            const forColorImage = document.createElement('img');
+            forColorImage.classList.add('forColor');
+            forColorImage.src = '/images/card2.jpg';
+
+            // const cardData = cardsData[dataIndex];
             const cardData = cardsData[dataIndex];
+
             
             if (cardData.type === 'image') {
                 card.setAttribute('data-image', cardData.data);  // Setting the attribute
+                card.appendChild(image);
+
                 card.addEventListener('click', flipCard);   // Adding an eventListener to the flipCard function
 
-                const image = document.createElement('img');  // Creating the element for the constant back image of the Card
-                image.classList.add('card-image');  // Setting a class
-                image.src = '/images/card2.jpg';   // Setting the image
 
-                card.appendChild(image);  // Adding the image to the card container
             } else {
                 card.style.backgroundColor = cardData.data;  // Setting the background color of the cell/card
                 card.setAttribute('data-data', cardData.data); 
+                card.appendChild(forColorImage);
+
 
                 card.addEventListener('click', flipCard);
-                const image = document.createElement('img');
-                image.classList.add('card-image');
-                image.src = '/images/card2.jpg'; 
 
-                card.appendChild(image);
             }
             //The dataIndex variable ensures that each card element in the matrix,
             // is synchronized with the corresponding data from the cardsData array.
             // It ensures that the data assigned to each card, whether it is an image file name or a color value,
             // matches the order in which the cards are being generated and displayed.
             dataIndex++;
+            // card.appendChild(image);
+
             // Appendiing the cards to the row
             row.appendChild(card);
         }   // Appending the row to the main div
@@ -208,9 +219,21 @@ function flipCard() {
   }
 
   this.classList.add('flipped');
-  const flippedImage = this.querySelector('.card-image');
-  flippedImage.src = `/Uploads/${this.getAttribute('data-image')}`;
-  flippedCards.push(flippedImage);
+//   const flippedImage = this.querySelector('.card-image');
+//   flippedImage.src = `/Uploads/${this.getAttribute('data-image')}`;
+//   flippedCards.push(flippedImage);
+if (this.hasAttribute('data-image')){
+     const flippedImage = this.querySelector('.card-image');
+    flippedImage.src = `/Uploads/${this.getAttribute('data-image')}`; 
+    flippedCards.push(flippedImage);
+} else if (this.hasAttribute('data-data')){
+    const flippedImage = this.querySelector('.forColor');
+    // flippedImage.src.style.backgroundColor = cardData.data;
+    // flippedImage.style.display = 'none';
+    flippedCards.push(flippedImage);
+}
+  
+
 
   if (!isTimerRunning) {
     startTimer();

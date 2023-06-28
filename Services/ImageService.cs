@@ -40,10 +40,11 @@ namespace MemoryCardGame.Services
             }
 
             //Check image name uniqueness
-            if (_imageRepository.ImageExists(imageFile.FileName))
+            if (_imageRepository.ImageExists(imageFile.FileName, userId))
             {
                 errors.Add("An image with the same name already exists.");
             }
+
 
             // Checking image name length (200 characters maximum)
             const int maxImageNameLength = 200;
@@ -53,17 +54,6 @@ namespace MemoryCardGame.Services
             }
 
             // Checking maximum number of uploaded photos (25 maximum)
-            // var totalImageCount = _imageRepository.GetTotalImageCount();
-            // const int maxImageCount = 25;
-            // if (totalImageCount >= maxImageCount)
-            // {
-            //     errors.Add("You have reached the maximum limit of uploaded photos.");
-            // }
-
-            // return errors;
-            // var userIdClaim = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
-            // var userId = userIdClaim?.Value;
-
             var totalImageCount = _imageRepository.GetTotalImageCount(userId); // Pass the userId
             const int maxImageCount = 25;
             if (totalImageCount >= maxImageCount)
@@ -72,7 +62,6 @@ namespace MemoryCardGame.Services
             }
 
             return errors;
-
         }
 
         // A helper bool that checks the type of file, attepmting to upload.
