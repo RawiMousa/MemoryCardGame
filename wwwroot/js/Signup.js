@@ -28,8 +28,29 @@ form.addEventListener('submit', (event) => {
         },
         body: jsonPayload
     })
+    
     .then(response => {
+        const Username = formData.get('Username');
         if (response.ok || response.status === 204) {
+
+            fetch(`/images/folder/${Username}`, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+              })
+              .then(response => {
+                if (response.ok) {
+                  // Folder created successfully
+                  console.log('Folder created');
+                } else {
+                  // Error creating the folder
+                  console.log('Error creating folder:', response.status);
+                }
+              })
+              .catch(error => {
+                // Handle the error
+              });
                 // Displaying the success message.
                 const successMsgElement = document.getElementById('successMsg');
                 if (successMsgElement) {

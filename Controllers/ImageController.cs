@@ -15,9 +15,12 @@ namespace MemoryCardGame.Controllers
     {
         private readonly ImageRepository _imageRepository;
 
-        public ImageController(ImageRepository imageRepository)
+        private readonly UserRepository _userRepository;
+
+        public ImageController(ImageRepository imageRepository, UserRepository userRepository)
         {
             _imageRepository = imageRepository;
+            _userRepository = userRepository;
         }
 
 
@@ -56,49 +59,142 @@ namespace MemoryCardGame.Controllers
         }
 
 
+        // // POST: /images
+        // [HttpPost]
+        // public IActionResult CreateImage()
+        // {
+        //     // Getting the form data from the request
+        //     var imageFile = Request.Form.Files.GetFile("FileName");
+        //     var userId = Request.Form["UserId"];
+
+        //     // Checking if the required data is present
+        //     if (imageFile == null || imageFile.Length <= 0)
+        //     {
+        //         return BadRequest("No image file was provided.");
+        //     }
+        //     // Checking if the field is empty or has only namespace.
+        //     if (string.IsNullOrEmpty(userId))
+        //     {
+        //         return BadRequest("No user ID was provided.");
+        //     }
+        //     // Validating the image file using the ImageService
+        //     var imageService = new ImageService(_imageRepository);
+        //     var UserId = int.Parse(userId);
+        //     var imageValidationErrors = imageService.ValidateImage(imageFile, UserId);
+        //     if (imageValidationErrors.Count > 0)
+        //     {
+        //         return BadRequest(imageValidationErrors);
+        //     }
+        //     // Saving the image file to a specific location on the server
+        //     var filePath = Path.Combine("Uploads", imageFile.FileName);
+        //     using (var stream = new FileStream(filePath, FileMode.Create))
+        //     {
+        //         imageFile.CopyTo(stream);
+        //     }
+        //     // Creating a new Image entity and set its properties
+        //     var image = new Image
+        //     {
+        //         FileName = imageFile.FileName,
+        //         UserId = int.Parse(userId)
+        //     };
+        //     // Adding the image to the database
+        //     _imageRepository.CreateImage(image);
+        //     return Ok();
+        // }
+
+
+
+
+
         // POST: /images
         [HttpPost]
         public IActionResult CreateImage()
         {
-            // Getting the form data from the request
             var imageFile = Request.Form.Files.GetFile("FileName");
             var userId = Request.Form["UserId"];
 
-            // Checking if the required data is present
             if (imageFile == null || imageFile.Length <= 0)
             {
                 return BadRequest("No image file was provided.");
             }
-            // Checking if the field is empty or has only namespace.
+
             if (string.IsNullOrEmpty(userId))
             {
                 return BadRequest("No user ID was provided.");
             }
-            // Validating the image file using the ImageService
+
             var imageService = new ImageService(_imageRepository);
-            var UserId = int.Parse(userId);
-            var imageValidationErrors = imageService.ValidateImage(imageFile, UserId);
+            var parsedUserId = int.Parse(userId);
+            var imageValidationErrors = imageService.ValidateImage(imageFile, parsedUserId);
+
             if (imageValidationErrors.Count > 0)
             {
                 return BadRequest(imageValidationErrors);
             }
-            // Saving the image file to a specific location on the server
-            var filePath = Path.Combine("Uploads", imageFile.FileName);
+
+            var user = _userRepository.GetUserById(parsedUserId);
+
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            var fileName = imageFile.FileName;
+            var userUploadsFolder = Path.Combine("Uploads", user.Username);
+
+            Directory.CreateDirectory(userUploadsFolder);
+
+            var filePath = Path.Combine(userUploadsFolder, fileName);
+
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
                 imageFile.CopyTo(stream);
             }
-            // Creating a new Image entity and set its properties
+
             var image = new Image
             {
-                FileName = imageFile.FileName,
-                UserId = int.Parse(userId)
+                FileName = fileName,
+                UserId = parsedUserId,
+                FilePath = filePath // Set the FilePath property to the file path
             };
-            // Adding the image to the database
+
             _imageRepository.CreateImage(image);
+
             return Ok();
         }
 
+
+        // // POST: /images/folder/{userId}
+        // [HttpPost("folder/{userId}")]
+        // public IActionResult CreateFolder(int userId)
+        // {
+        //     var userById = _userRepository.GetUserById(userId);
+        //     if (userById == null)
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     var username = userById.Username;
+        //     _imageRepository.CreateFolder(username);
+
+        //     return Ok();
+        // }
+
+
+        // POST: /images/folder/{username}
+        [HttpPost("folder/{username}")]
+        public IActionResult CreateFolder(string username)
+        {
+            var userByUsername = _userRepository.GetUserByUsername(username);
+            if (userByUsername == null)
+            {
+                return NotFound();
+            }
+
+            _imageRepository.CreateFolder(username);
+
+            return Ok();
+        }
 
         // DELETE: /images/{id}
         [HttpDelete("{id}")]

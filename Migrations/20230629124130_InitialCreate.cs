@@ -17,7 +17,8 @@ namespace MemoryCardGame.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     FileName = table.Column<string>(type: "TEXT", nullable: false),
-                    UserId = table.Column<int>(type: "INTEGER", nullable: false)
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    FilePath = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

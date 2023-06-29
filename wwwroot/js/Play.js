@@ -1,3 +1,6 @@
+const username = localStorage.getItem('username');
+
+
 // This mini function redirects to the Play.cshtml page
 function redirectToPlay() {
     window.location.href = '/Play';
@@ -224,12 +227,10 @@ function flipCard() {
 //   flippedCards.push(flippedImage);
 if (this.hasAttribute('data-image')){
      const flippedImage = this.querySelector('.card-image');
-    flippedImage.src = `/Uploads/${this.getAttribute('data-image')}`; 
+    flippedImage.src = `/Uploads/${username}/${this.getAttribute('data-image')}`; 
     flippedCards.push(flippedImage);
 } else if (this.hasAttribute('data-data')){
     const flippedImage = this.querySelector('.forColor');
-    // flippedImage.src.style.backgroundColor = cardData.data;
-    // flippedImage.style.display = 'none';
     flippedCards.push(flippedImage);
 }
   

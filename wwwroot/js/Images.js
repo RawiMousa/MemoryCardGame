@@ -108,6 +108,7 @@ function handleMyImagesClick() {
     // Getting the userId and token from the local storage.
     const userId = localStorage.getItem('userId');
     const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
     // Fetching the nessacary elements for display the images
     const questionIconContainer = document.getElementById('questionIconContainer');
     const galleryContainer = document.getElementById('galleryContainer');
@@ -150,7 +151,7 @@ function handleMyImagesClick() {
                     imageElement.classList.add('gallery-image');
 
                     const image = document.createElement('img');
-                    image.src = `/Uploads/${imageData.fileName}`;
+                    image.src = `/Uploads/${username}/${imageData.fileName}`;
 
                     const imageCaption = document.createElement('p');
                     imageCaption.textContent = imageData.imageName;

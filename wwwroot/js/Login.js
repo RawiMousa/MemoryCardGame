@@ -27,6 +27,7 @@ form.addEventListener('submit', async (event) => {
         if (response.ok || response.status === 204) {
             console.log(response.status);
         let token;
+        let Username;
 
         // Checking if the token is in the response headers
         if (response.headers.has('Authorization')) {
@@ -36,13 +37,15 @@ form.addEventListener('submit', async (event) => {
             const responseData = await response.json();
             token = responseData.token;
             userId = responseData.userId;
+            Username = responseData.username;
         }
         
         // Storing the token and the userId in localStorage.
         localStorage.setItem('token', token);
         localStorage.setItem('userId', userId);
+        localStorage.setItem('username', Username);
 
-        msg.textContent = 'Signed up successfully!'; // Displaying success message upon logging in.
+        msg.textContent = 'Logged in successfully!'; // Displaying success message upon logging in.
         msg.style.display = 'block';
         // Hiding the success message after 3 seconds
         setTimeout(() => {

@@ -1,3 +1,6 @@
+// This module represents the API for the User entity.
+// This module interacts with the UserRepository module which is responsible for direct actions with the Database.
+
 using Microsoft.AspNetCore.Mvc;
 using MemoryCardGame.Repositories;
 using MemoryCardGame.Entities;
@@ -118,7 +121,7 @@ namespace MemoryCardGame.Controllers
                 var token = _generateTokenService.GenerateToken(user.Id.ToString());
 
                 // Return the token as a response
-                return Ok(new { Token = token, UserId = user.Id });
+                return Ok(new { Token = token, UserId = user.Id, Username = user.Username });
                 }
                 else
                 {

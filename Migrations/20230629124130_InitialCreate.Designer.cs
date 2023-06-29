@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MemoryCardGame.Migrations
 {
     [DbContext(typeof(GameDbContext))]
-    [Migration("20230625161801_InitialCreate")]
+    [Migration("20230629124130_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -26,6 +26,10 @@ namespace MemoryCardGame.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FilePath")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

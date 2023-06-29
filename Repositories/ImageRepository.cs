@@ -40,6 +40,17 @@ namespace MemoryCardGame.Repositories
             _dbContext.SaveChanges();
         }
 
+        public void CreateFolder(string Username)
+        {
+            string uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
+            string userFolderPath = Path.Combine(uploadsPath, Username);
+
+            if (!Directory.Exists(userFolderPath))
+            {
+                Directory.CreateDirectory(userFolderPath);
+            }
+        }
+
 
         public bool ImageExists(string imageName, int userId)
         {
